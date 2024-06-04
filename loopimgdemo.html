@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>轮播图程序</title>
+    <style>
+        .slideshow {
+            width: 500px;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slideshow img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slideshow .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slideshow .slide.active {
+            opacity: 1;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slideshow button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .slideshow #prev {
+            left: 10px;
+        }
+
+        .slideshow #next {
+            right: 10px;
+        }
+
+        body button {
+            border: 1px solid #000;
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slideshow">
+        
+        <div class="loopimg">
+            <div class="slide active">
+                <img src="./img/loop1/1.png" alt="Image 1">
+            </div>
+            <div class="slide">
+                <img src="./img/loop1/2.png" alt="Image 2">
+            </div>
+            <div class="slide">
+                <img src="./img/loop1/3.png" alt="Image 3">
+            </div>
+            <div class="slide">
+                <img src="./img/loop1/4.jpg" alt="Image 4">
+            </div>
+            <div class="slide">
+                <img src="./img/loop1/5.png" alt="Image 5">
+            </div>
+        </div>
+        <button id="prev">‹</button>
+        <button id="next">›</button>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showSlide() {
+            slides.forEach((slide, index) => {
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide++;
+            if (currentSlide >= slides.length) {
+                currentSlide = 0;
+            }
+            showSlide();
+        }
+
+        function prevSlide() {
+            currentSlide--;
+            if (currentSlide < 0) {
+                currentSlide = slides.length - 1;
+            }
+            showSlide();
+        }
+
+        document.getElementById('prev').addEventListener('click', prevSlide);
+        document.getElementById('next').addEventListener('click', nextSlide);
+
+        setInterval(nextSlide, 3000);
+    </script>
+</body>
+
+</html>
