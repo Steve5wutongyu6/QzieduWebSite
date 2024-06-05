@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>信息栏</title>
+</head>
+<style>
+    body {
+        font-size: 16px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .info-bar {
+        padding: 20px;
+    }
+
+    .info-bar h2 {
+        font-size: 10px;
+        margin-bottom: 10px;
+        margin-top: 0;
+        /* 移除标题上方的默认外边距 */
+    }
+
+    .info-bar ul {
+        list-style-type: none;
+        padding-left: 0;
+        margin-bottom: 0;
+        /* 可选，移除列表下方的外边距，使底部更整洁 */
+    }
+
+    .info-bar li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .info-bar .date {
+        color: #6c757d;
+        margin-right: 10px;
+    }
+
+    .info-bar .title {
+        flex-grow: 1;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        /* 保持不变，用于均匀分配空间 */
+        align-items: flex-start;
+        /* 确保内容从顶部对齐 */
+    }
+
+    .date {
+        white-space: nowrap;/*日期不要换行*/
+    }
+
+    .column {
+        width: 380px;
+        /* 保持不变，但请根据实际需求调整 */
+        padding: 20px;
+        box-sizing: border-box;
+        /* 确保内边距被包含在总宽度内 */
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="column info-bar" id="news-column">
+            <img src="./img/infobar/qxxw.png" alt="">
+            <ul id="news-list"></ul>
+        </div>
+        <div class="column info-bar" id="media-column">
+            <img src="./img/infobar/mtqx.png" alt="">
+            <ul id="media-list"></ul>
+        </div>
+        <div class="column info-bar" id="teaching-research-column">
+            <img src="./img/infobar/qxxw.png" alt="">
+            <ul id="teaching-research-list"></ul>
+        </div>
+    </div>
+</body>
+<script>
+    function processInfobar(data, listId) {
+        const list = document.getElementById(listId);
+
+        data.forEach(item => {
+            const listItem = document.createElement('li');
+
+            const dateElement = document.createElement('span');
+            dateElement.className = 'date';
+            dateElement.textContent = item.date;
+
+            const titleElement = document.createElement('a');
+            titleElement.href = item.url;
+            titleElement.textContent = item.title;
+
+            listItem.appendChild(dateElement);
+            listItem.appendChild(titleElement);
+
+            list.appendChild(listItem);
+        });
+    }
+
+    Promise.all([
+        fetch('./json/infobar1.json'),
+        fetch('./json/infobar2.json'),
+        fetch('./json/infobar3.json')
+    ])
+        .then(([infobar1Response, infobar2Response, infobar3Response]) =>
+            Promise.all([infobar1Response.json(), infobar2Response.json(), infobar3Response.json()])
+        )
+        .then(([infobar1Data, infobar2Data, infobar3Data]) => {
+            processInfobar(infobar1Data, 'news-list');
+            processInfobar(infobar2Data, 'media-list');
+            processInfobar(infobar3Data, 'teaching-research-list');
+        })
+        .catch(error => console.error('Error:', error));
+</script>
+
+</html>

@@ -166,7 +166,7 @@
 
         // Function to fetch and display news items
         function loadNews() {
-            fetch('news.json')
+            fetch('./json/news.json')
                 .then(response => response.json())
                 .then(data => {
                     newsData = data;

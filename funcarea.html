@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Area</title>
+</head>
+<style>
+    .function-area {
+        width: 1140px;
+        padding-left: 13%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .function-item {
+        display: grid;
+        align-items: center;
+        text-decoration: none;
+        text-align: center;
+        justify-content: center;
+        color: #333;
+        padding: 10px;
+        border-radius: 5px;
+        transition: background-color 0.2s ease-in-out;
+    }
+
+    .function-item:hover {
+        background-color: #f0f0f0;
+    }
+</style>
+
+<body>
+    <div class="function-area">
+        <a href="https://jwgl.qzuie.edu.cn/Logon.do?method=logon&issso=1" class="function-item">
+            <img src="./img/icons/jwgl.png" alt="教务系统">
+            教务系统
+        </a>
+        <a href="https://uni.weixiao.qq.com/pc/oauth/index.html?school_code=4135013766&scope=snsapi_sso&response_type=code&app_key=6DC1460C56A24EFB&redirect_uri=http%3A%2F%2Fservice.qzuie.edu.cn%2Fsso%2Flogin&state=0ttersld&rewrite=1" class="function-item">
+            <img src="./img/icons/zhmh.png" alt="智慧门户">
+            智慧门户
+        </a>
+        <a href="http://qziedu.fy.chaoxing.com/portal" class="function-item">
+            <img src="./img/icons/wljx.png" alt="教学平台">
+            教学平台
+        </a>
+        <a href="http://oa.qziedu.cn:8084/C6/Jhsoft.Web.login/PassWordSlide.aspx" class="function-item">
+            <img src="./img/icons/oa.png" alt="OA系统">
+            OA系统
+        </a>
+        <a href="https://lib.qzuie.edu.cn/" class="function-item">
+            <img src="./img/icons/tsg.png" alt="图书馆">
+            图书馆
+        </a>
+        <a href="https://www.qzuie.edu.cn/" class="function-item">
+            <img src="./img/icons/jxcg.png" alt="成果展示">
+            成果展示
+        </a>
+        <a href="https://www.qzuie.edu.cn/" class="function-item">
+            <img src="./img/icons/wpan.png" alt="校务公开">
+            校务公开
+        </a>
+        <a href="https://mail.qzuie.edu.cn/" class="function-item">
+            <img src="./img/icons/emailpng.png" alt="电子邮件">
+            电子邮件
+        </a>
+        <a href="https://mail.qzuie.edu.cn/" class="function-item">
+            <img src="./img/icons/paper.png" alt="校报">
+            校报
+        </a>
+        <!-- Add more function items here -->
+    </div>
+    <script src="scripts.js"></script>
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const functionItems = document.querySelectorAll('.function-item');
+
+        functionItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.open(e.target.href);
+            });
+        });
+    });
+</script>
+
+</html>

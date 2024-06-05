@@ -3,11 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>泉州信息工程学院</title>
+    <title>假的泉州信息工程学院官网</title>
 </head>
 
 <style>
-
     body {
         margin: 0;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -29,6 +28,16 @@
     .banner-img {
         width: 80%;
         margin: 0 auto;
+        display: block;
+    }
+
+    .footer {
+        width: 100%;
+        background-image: url('./img/footer-bg.png');
+    }
+
+    .footer img {
+        width: 100%;
         display: block;
     }
 
@@ -56,7 +65,7 @@
         display: flex;
         justify-content: center;
         padding: 0;
-        
+
     }
 
     .navitem a {
@@ -71,6 +80,7 @@
         border: 1px solid transparent;
         text-decoration: none;
     }
+
     .search a {
         display: inline-block;
         padding: 10px 15px;
@@ -79,15 +89,59 @@
         text-decoration: none;
     }
 
-    .imgloop iframe{
+    .imgloop iframe {
         width: 1536px;
         height: 405.5px;
         padding-left: 12.5%;
     }
 
-    .headlines iframe{
+    .headlines iframe {
         width: 1536px;
-        height: 500px;
+        height: 430px;
+    }
+
+    .partybanner img {
+        padding-top: 0;
+        padding-left: 15%;
+        width: 1110px;
+        height: 112.88px;
+    }
+
+    .news {
+        display: inline-block;
+        padding-left: 14%;
+        /*隐藏水平滚动条*/
+        overflow-x: hidden;
+    }
+
+    .news iframe {
+        width: 1140px;
+        height: 460px;
+        overflow-x: hidden;
+        /*隐藏水平滚动条 */
+    }
+
+    .funcarea iframe {
+        width: 1536px;
+        height: 150px;
+
+    }
+
+    footer {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #1339f2;
+        padding: 10px;
+        text-align: center;
+        color: white;
+        font-size: 0.8rem;
+    }
+
+    footer a {
+        color: white;
+        /* 添加备案号的文字颜色为白色 */
+        text-decoration: none;
     }
 </style>
 
@@ -139,8 +193,55 @@
     </div>
 
     <div class="headlines">
+        <!--头条新闻-->
         <iframe src="./headlinenews.html" frameborder="0"></iframe>
     </div>
+
+    <div class="partybanner">
+        <!--党建banner1-->
+        <img src="./img/PartyBanner1/PartyBanner1.jpg" alt="">
+    </div>
+
+    <div class="news">
+        <!--泉信新闻-->
+        <iframe src="./qznews.html" frameborder="0"></iframe>
+    </div>
+
+    <div class="partybanner">
+        <img src="./img/PartyBanner1/PartyBanner2.jpg" alt="">
+    </div>
+
+    <div class="featuresofquie">
+        <!--泉信特色-->
+    </div>
+
+    <div class="partybanner">
+        <img src="./img/PartyBanner1/PartyBanner3.jpg" alt="">
+    </div>
+
+    <div class="funcarea">
+        <!--功能区-->
+        <iframe src="./funcarea.html" frameborder="0"></iframe>
+    </div>
+    
+    <div class="footer">
+        <img src="./img/footer.png" alt="页脚图片">
+    </div>
+
+    <footer class="realfooter">
+        <span>
+            地址: 福建省泉州市丰泽区博东路249号 电话: 0595-22767537   邮编: 362000 招生热线: 0595-22789708 22789808
+        </span>
+        <a class="text-color" href="https://beian.miit.gov.cn" target="_self"
+            style="display:inline-block;text-decoration:none;height:20px;line-height:20px;">
+            <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#ffffff;">
+                闽ICP备05015349号-1</p>
+        </a>
+        <img src="./img/icons/police.png" alt="公安备案图标" width="20px" height="20px">
+        <a href="https://beian.mps.gov.cn/#/query/webSearch?code=34050302000803\" rel=\"noreferrer\"
+            target=\"_blank\">闽公网安备 35050302000823号</a>
+        <p>By 2203260111吴同宇</p>
+    </footer>
 </body>
 
 </html>
