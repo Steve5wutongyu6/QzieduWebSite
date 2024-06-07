@@ -1,0 +1,188 @@
+    body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #212529;
+        text-align: left;
+        background-color: #fff;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .banner {
+        width: 100%;
+        background-image: url('../img/banner-bg.png');
+    }
+
+    .banner-img {
+        width: 80%;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .lastbanner {
+        width: 100%;
+        height: 200px;
+        background-image: url('../img/footer-bg.png');
+    }
+
+    .lastbanner img {
+        width: 100%;
+        display: block;
+    }
+
+    .navbar-bg {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+        background-color: #f8f9fa;
+        border-bottom: 1px solid #e9ecef;
+    }
+
+    .navitem {
+        display: inline-block;
+        padding: 10px 15px;
+        margin: 0;
+        border: 1px solid transparent;
+        text-decoration: none;
+    }
+
+    .navbar-nav {
+        padding-left: 0;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+        padding: 0;
+
+    }
+
+    .navitem a {
+        color: #404c7f;
+        text-decoration: none;
+        font-weight: bolder;
+    }
+
+    .search {
+        display: inline-block;
+        margin: 0;
+        border: 1px solid transparent;
+        text-decoration: none;
+    }
+
+    .search a {
+        display: inline-block;
+        padding: 10px 15px;
+        margin: 0;
+        border: 1px solid transparent;
+        text-decoration: none;
+    }
+
+    .imgloop iframe {
+        width: 1536px;
+        height: 405.5px;
+        padding-left: 12.5%;
+    }
+
+    .headlines iframe {
+        width: 1536px;
+        height: 430px;
+    }
+
+    .partybanner img {
+        padding-top: 0;
+        padding-left: 15%;
+        width: 1110px;
+        height: 112.88px;
+    }
+
+    .news {
+        display: inline-block;
+        padding-left: 14%;
+        /*隐藏水平滚动条*/
+        overflow-x: hidden;
+    }
+
+    .news iframe {
+        width: 1140px;
+        height: 550px;
+        overflow-x: hidden;
+        /*隐藏水平滚动条 */
+    }
+
+    .featuresofquie {
+        width: 1140px;
+    }
+
+    .featuresofquie iframe {
+        padding-left: 19%;
+        width: 1130px;
+        height: 405px;
+    }
+
+    .funcarea iframe {
+        width: 1536px;
+        height: 150px;
+
+    }
+
+    footer {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #1339f2;
+        padding: 10px;
+        text-align: center;
+        color: white;
+        font-size: 0.8rem;
+    }
+
+    footer a {
+        color: white;
+        /* 添加备案号的文字颜色为白色 */
+        text-decoration: none;
+    }
+
+    .floating-logo {
+        position: fixed;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .floating-logo img {
+        width: 100px;
+    }
+
+    .share {
+        position: relative;
+        justify-content: right;
+        align-items: right;
+        display: flex;
+        padding-right: 15%;
+        bottom: 50%;
+    }
+
+    .share img {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        margin: 10px;
+    }
+    .share img:hover {
+        transform: scale(2.5);
+    }
+
+    .popup {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        display: none;
+    }
