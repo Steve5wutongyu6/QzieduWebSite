@@ -57,12 +57,12 @@
     }
 
     .date {
-        white-space: nowrap;/*日期不要换行*/
+        white-space: nowrap;
+        /*日期不要换行*/
     }
 
     .column {
         width: 380px;
-        /* 保持不变，但请根据实际需求调整 */
         padding: 20px;
         box-sizing: border-box;
         /* 确保内边距被包含在总宽度内 */
@@ -121,7 +121,7 @@
             processInfobar(infobar2Data, 'media-list');
             processInfobar(infobar3Data, 'teaching-research-list');
         })
-        .catch(error => console.error('Error:', error));
+        .catch(error => console.error('Error:', error));/*异常处理*/
 </script>
 
 </html>

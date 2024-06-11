@@ -34,7 +34,7 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(0,0,0,0.5);
+            background-color: rgba(0, 0, 0, 0.5);
             color: white;
             border: none;
             padding: 10px;
@@ -81,11 +81,15 @@
     </div>
 
     <script>
-        const slides = document.querySelectorAll('.slide');
-        let currentSlide = 0;
+        /*轮播图*/
+        const slides = document.querySelectorAll('.slide');/*获取所有的幻灯片元素*/
+        let currentSlide = 0;/*幻灯片索引*/
 
+        /*显示幻灯片*/
         function showSlide() {
+            /*遍历所有幻灯片元素*/
             slides.forEach((slide, index) => {
+                /*如果当前幻灯片索引等于当前幻灯片索引,添加active类,否则移除*/
                 if (index === currentSlide) {
                     slide.classList.add('active');
                 } else {
@@ -94,10 +98,11 @@
             });
         }
 
+        /*下一张幻灯片*/
         function nextSlide() {
-            currentSlide++;
+            currentSlide++;/*幻灯片索引+1*/
             if (currentSlide >= slides.length) {
-                currentSlide = 0;
+                currentSlide = 0;   /*如果幻灯片索引大于等于幻灯片数量,幻灯片索引为0*/
             }
             showSlide();
         }
@@ -105,13 +110,13 @@
         function prevSlide() {
             currentSlide--;
             if (currentSlide < 0) {
-                currentSlide = slides.length - 1;
+                currentSlide = slides.length - 1;   /*如果幻灯片索引小于0,幻灯片索引为幻灯片数量-1*/
             }
             showSlide();
         }
 
-        document.getElementById('prev').addEventListener('click', prevSlide);
-        document.getElementById('next').addEventListener('click', nextSlide);
+        document.getElementById('prev').addEventListener('click', prevSlide);   /*点击上一张*/
+        document.getElementById('next').addEventListener('click', nextSlide);   /*点击下一张*/
 
         setInterval(nextSlide, 3000); /*3秒切一次*/
     </script>

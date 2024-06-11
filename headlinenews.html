@@ -133,7 +133,6 @@
     .slider-indicators span.active {
         background-color: #007bff;
     }
-
 </style>
 
 <body>
@@ -151,19 +150,20 @@
 </body>
 
 <script>
+    /*从指定json中读取新闻数据,并显示到轮播图中*/
     document.addEventListener('DOMContentLoaded', () => {
-        const sliderWrapper = document.getElementById('slider-wrapper');
+        const sliderWrapper = document.getElementById('slider-wrapper');/*sliderWrapper,所有新闻项*/
         const prevButton = document.getElementById('prev');
-        const nextButton = document.getElementById('next');
-        const sliderIndicators = document.createElement('div');
+        const nextButton = document.getElementById('next');/*前进后退按钮项*/
+        const sliderIndicators = document.createElement('div');/*页签*/
         sliderIndicators.className = 'slider-indicators';
         document.querySelector('.headline-container').appendChild(sliderIndicators);
-
+        /*定义当前显示的新闻项的索引和用于存储新闻数据的数组*/
         let currentIndex = 0;
         let newsData = [];
         const itemsPerPage = 4;
 
-        // Function to fetch and display news items
+        // 读取新闻数据
         function loadNews() {
             fetch('./json/news.json')
                 .then(response => response.json())
@@ -176,9 +176,9 @@
                 .catch(error => console.error('Error loading news:', error));
         }
 
-        // Function to render news items
+        // 显示新闻项目和页签,这里用到了模板字符串
         function renderNewsItems() {
-            sliderWrapper.innerHTML = ''; // Clear existing items
+            sliderWrapper.innerHTML = ''; 
             newsData.forEach(news => {
                 const newsItem = document.createElement('div');
                 newsItem.classList.add('slider-item');
@@ -190,7 +190,7 @@
             });
         }
 
-        // Function to render indicators
+        // 底部页签
         function renderIndicators() {
             sliderIndicators.innerHTML = ''; // Clear existing indicators
             const pageCount = Math.ceil(newsData.length / itemsPerPage);
@@ -200,7 +200,7 @@
                 sliderIndicators.appendChild(indicator);
             }
         }
-
+        
         function showSlide(index) {
             const pageCount = Math.ceil(newsData.length / itemsPerPage);
             if (index >= pageCount * itemsPerPage) {
@@ -230,12 +230,11 @@
             showSlide(currentIndex + itemsPerPage);
         });
 
-        // Auto slide every 5 seconds
+        // 5秒自动轮播
         setInterval(() => {
             showSlide(currentIndex + itemsPerPage);
         }, 5000);
 
-        // Load news on page load
         loadNews();
     });
 </script>
